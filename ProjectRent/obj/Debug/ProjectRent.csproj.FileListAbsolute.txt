@@ -8,3 +8,4 @@ F:\Ygu\Estudo\Projeto controle de alugueis\ProjectRent\ProjectRent\obj\Debug\Pro
 F:\Ygu\Estudo\Projeto controle de alugueis\ProjectRent\ProjectRent\obj\Debug\ProjectRent.exe
 F:\Ygu\Estudo\Projeto controle de alugueis\ProjectRent\ProjectRent\obj\Debug\ProjectRent.pdb
 F:\Ygu\Estudo\Projeto controle de alugueis\ProjectRent\ProjectRent\obj\Debug\ProjectRent.frmCadastro.resources
+F:\Ygu\Estudo\Projeto controle de alugueis\ProjectRent\ProjectRent\bin\Debug\MySql.Data.dll

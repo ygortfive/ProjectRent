@@ -57,6 +57,11 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dateFim = new System.Windows.Forms.MaskedTextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.dateInicio = new System.Windows.Forms.MaskedTextBox();
+            this.label22 = new System.Windows.Forms.Label();
             this.dateVencimento = new System.Windows.Forms.MaskedTextBox();
             this.txtValor = new System.Windows.Forms.MaskedTextBox();
             this.label21 = new System.Windows.Forms.Label();
@@ -71,11 +76,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.dateInicio = new System.Windows.Forms.MaskedTextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.dateFim = new System.Windows.Forms.MaskedTextBox();
+            this.label25 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -96,7 +97,7 @@
             this.txtCod.Location = new System.Drawing.Point(70, 15);
             this.txtCod.Name = "txtCod";
             this.txtCod.Size = new System.Drawing.Size(51, 20);
-            this.txtCod.TabIndex = 1;
+            this.txtCod.TabIndex = 0;
             // 
             // label2
             // 
@@ -197,7 +198,7 @@
             this.txtNome.Location = new System.Drawing.Point(84, 63);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(246, 23);
-            this.txtNome.TabIndex = 12;
+            this.txtNome.TabIndex = 1;
             // 
             // txtRG
             // 
@@ -205,7 +206,7 @@
             this.txtRG.Location = new System.Drawing.Point(367, 63);
             this.txtRG.Name = "txtRG";
             this.txtRG.Size = new System.Drawing.Size(111, 23);
-            this.txtRG.TabIndex = 13;
+            this.txtRG.TabIndex = 2;
             // 
             // txtCPF
             // 
@@ -213,7 +214,7 @@
             this.txtCPF.Location = new System.Drawing.Point(508, 15);
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(124, 23);
-            this.txtCPF.TabIndex = 14;
+            this.txtCPF.TabIndex = 3;
             this.txtCPF.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // txtEmail
@@ -222,7 +223,7 @@
             this.txtEmail.Location = new System.Drawing.Point(454, 97);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(170, 23);
-            this.txtEmail.TabIndex = 16;
+            this.txtEmail.TabIndex = 6;
             this.txtEmail.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // txtRef
@@ -231,7 +232,7 @@
             this.txtRef.Location = new System.Drawing.Point(108, 86);
             this.txtRef.Name = "txtRef";
             this.txtRef.Size = new System.Drawing.Size(279, 23);
-            this.txtRef.TabIndex = 17;
+            this.txtRef.TabIndex = 7;
             // 
             // label4
             // 
@@ -275,7 +276,7 @@
             this.txtCel.Mask = "(99) 00000-0000";
             this.txtCel.Name = "txtCel";
             this.txtCel.Size = new System.Drawing.Size(111, 23);
-            this.txtCel.TabIndex = 26;
+            this.txtCel.TabIndex = 4;
             // 
             // txtTel
             // 
@@ -285,7 +286,7 @@
             this.txtTel.Mask = "(99) 000-0000";
             this.txtTel.Name = "txtTel";
             this.txtTel.Size = new System.Drawing.Size(97, 23);
-            this.txtTel.TabIndex = 25;
+            this.txtTel.TabIndex = 5;
             // 
             // label14
             // 
@@ -342,7 +343,7 @@
             this.txtNumLocal.Location = new System.Drawing.Point(202, 16);
             this.txtNumLocal.Name = "txtNumLocal";
             this.txtNumLocal.Size = new System.Drawing.Size(44, 23);
-            this.txtNumLocal.TabIndex = 21;
+            this.txtNumLocal.TabIndex = 9;
             // 
             // label16
             // 
@@ -381,6 +382,7 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox2.Controls.Add(this.label25);
             this.groupBox2.Controls.Add(this.dateFim);
             this.groupBox2.Controls.Add(this.label24);
             this.groupBox2.Controls.Add(this.label23);
@@ -406,6 +408,56 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Dados Contratuais";
             // 
+            // dateFim
+            // 
+            this.dateFim.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateFim.Location = new System.Drawing.Point(323, 47);
+            this.dateFim.Mask = "00/00/0000";
+            this.dateFim.Name = "dateFim";
+            this.dateFim.Size = new System.Drawing.Size(78, 22);
+            this.dateFim.TabIndex = 11;
+            this.dateFim.ValidatingType = typeof(System.DateTime);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(182, 49);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(24, 18);
+            this.label24.TabIndex = 41;
+            this.label24.Text = "De";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(287, 49);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(32, 18);
+            this.label23.TabIndex = 40;
+            this.label23.Text = "até";
+            // 
+            // dateInicio
+            // 
+            this.dateInicio.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateInicio.Location = new System.Drawing.Point(206, 47);
+            this.dateInicio.Mask = "00/00/0000";
+            this.dateInicio.Name = "dateInicio";
+            this.dateInicio.Size = new System.Drawing.Size(78, 22);
+            this.dateInicio.TabIndex = 10;
+            this.dateInicio.ValidatingType = typeof(System.DateTime);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(16, 47);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(168, 18);
+            this.label22.TabIndex = 38;
+            this.label22.Text = "Duração do contrato:";
+            // 
             // dateVencimento
             // 
             this.dateVencimento.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -413,7 +465,7 @@
             this.dateVencimento.Mask = "00/00/0000";
             this.dateVencimento.Name = "dateVencimento";
             this.dateVencimento.Size = new System.Drawing.Size(78, 22);
-            this.dateVencimento.TabIndex = 37;
+            this.dateVencimento.TabIndex = 13;
             this.dateVencimento.ValidatingType = typeof(System.DateTime);
             // 
             // txtValor
@@ -422,8 +474,8 @@
             this.txtValor.Location = new System.Drawing.Point(176, 76);
             this.txtValor.Mask = "000,00";
             this.txtValor.Name = "txtValor";
-            this.txtValor.Size = new System.Drawing.Size(43, 23);
-            this.txtValor.TabIndex = 36;
+            this.txtValor.Size = new System.Drawing.Size(51, 23);
+            this.txtValor.TabIndex = 12;
             // 
             // label21
             // 
@@ -459,7 +511,7 @@
             this.cboxTipo.Name = "cboxTipo";
             this.cboxTipo.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.cboxTipo.Size = new System.Drawing.Size(104, 21);
-            this.cboxTipo.TabIndex = 33;
+            this.cboxTipo.TabIndex = 8;
             // 
             // groupBox3
             // 
@@ -483,6 +535,7 @@
             this.checkGaragem.TabIndex = 31;
             this.checkGaragem.Text = "Garagem";
             this.checkGaragem.UseVisualStyleBackColor = true;
+            this.checkGaragem.CheckedChanged += new System.EventHandler(this.checkGaragem_CheckedChanged);
             // 
             // checkAgua
             // 
@@ -493,6 +546,7 @@
             this.checkAgua.TabIndex = 28;
             this.checkAgua.Text = "Água";
             this.checkAgua.UseVisualStyleBackColor = true;
+            this.checkAgua.CheckedChanged += new System.EventHandler(this.checkAgua_CheckedChanged);
             // 
             // checkInternet
             // 
@@ -503,6 +557,7 @@
             this.checkInternet.TabIndex = 30;
             this.checkInternet.Text = "Internet";
             this.checkInternet.UseVisualStyleBackColor = true;
+            this.checkInternet.CheckedChanged += new System.EventHandler(this.checkInternet_CheckedChanged);
             // 
             // checkEletricidade
             // 
@@ -513,6 +568,7 @@
             this.checkEletricidade.TabIndex = 29;
             this.checkEletricidade.Text = "Eletricidade";
             this.checkEletricidade.UseVisualStyleBackColor = true;
+            this.checkEletricidade.CheckedChanged += new System.EventHandler(this.checkEletricidade_CheckedChanged);
             // 
             // btnNovo
             // 
@@ -533,6 +589,7 @@
             this.button1.TabIndex = 23;
             this.button1.Text = "&Salvar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -555,55 +612,17 @@
             this.label20.TabIndex = 25;
             this.label20.Text = "* Campos Obrigatórios";
             // 
-            // label22
+            // label25
             // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(16, 47);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(168, 18);
-            this.label22.TabIndex = 38;
-            this.label22.Text = "Duração do contrato:";
-            // 
-            // dateInicio
-            // 
-            this.dateInicio.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateInicio.Location = new System.Drawing.Point(206, 47);
-            this.dateInicio.Mask = "00/00/0000";
-            this.dateInicio.Name = "dateInicio";
-            this.dateInicio.Size = new System.Drawing.Size(78, 22);
-            this.dateInicio.TabIndex = 39;
-            this.dateInicio.ValidatingType = typeof(System.DateTime);
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(287, 49);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(32, 18);
-            this.label23.TabIndex = 40;
-            this.label23.Text = "até";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(182, 49);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(24, 18);
-            this.label24.TabIndex = 41;
-            this.label24.Text = "De";
-            // 
-            // dateFim
-            // 
-            this.dateFim.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateFim.Location = new System.Drawing.Point(323, 47);
-            this.dateFim.Mask = "00/00/0000";
-            this.dateFim.Name = "dateFim";
-            this.dateFim.Size = new System.Drawing.Size(78, 22);
-            this.dateFim.TabIndex = 42;
-            this.dateFim.ValidatingType = typeof(System.DateTime);
+            this.label25.AutoSize = true;
+            this.label25.BackColor = System.Drawing.Color.Transparent;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.ForeColor = System.Drawing.Color.Red;
+            this.label25.Location = new System.Drawing.Point(6, 47);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(13, 15);
+            this.label25.TabIndex = 42;
+            this.label25.Text = "*";
             // 
             // frmCadastro
             // 
@@ -688,5 +707,6 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.MaskedTextBox dateInicio;
         private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label25;
     }
 }
