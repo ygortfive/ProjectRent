@@ -8,6 +8,7 @@ namespace ProjectRent
         public frmCadastro()
         {
             InitializeComponent();
+            MessageBox.Show("OCORRENDO ERRO PARA VALIDAR E SALVAR CAMPO DE DATA");
         }
 
         private void frmCadastro_Load(object sender, EventArgs e)
@@ -38,14 +39,20 @@ namespace ProjectRent
         private void button1_Click(object sender, EventArgs e)
         {
             //Validar campos em branco
-            if((txtNome.Text == "") || (txtCPF.Text == "") || (txtCel.Text == "") || (cboxTipo.Text == "") || (txtValor.Text == "")
-                || (dateVencimento.Text.ToString() == "") || (dateInicio.Text.ToString() == "") || (dateFim.Text.ToString() == ""))
+            dateVencimento.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            dateInicio.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            dateFim.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            if((txtNome.Text == "") || (txtCPF.Text == "") || (txtCel.Text == "") || (cboxTipo.Text == "") || (double.Parse(txtValor.Text) == 0.0)
+                || (dateVencimento.Text == "") || (dateInicio.Text == "") || (dateFim.Text == ""))
             {
                 MessageBox.Show("Os campos com * são obrigatório" , "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtNome.Focus();
             }
             else
             {
+                dateVencimento.TextMaskFormat = MaskFormat.IncludeLiterals;
+                dateInicio.TextMaskFormat = MaskFormat.IncludeLiterals;
+                dateFim.TextMaskFormat = MaskFormat.IncludeLiterals;
                 clsAluguel Aluguel = new clsAluguel();
                 //Aluguel.Cod = int.Parse((txtCod.Text));
                 Aluguel.Nome = txtNome.Text;
@@ -55,14 +62,16 @@ namespace ProjectRent
                 Aluguel.Email = txtEmail.Text;
                 Aluguel.Tipo = cboxTipo.Text;
                 Aluguel.Num = txtNumLocal.Text;
-                Aluguel.DataInicio = DateTime.Parse(dateInicio.Text.ToString());
-                Aluguel.DataFim = DateTime.Parse(dateFim.Text.ToString());
+                Aluguel.DataInicio = DateTime.Parse(dateInicio.Text).Date;
+                Aluguel.DataFim = DateTime.Parse(dateFim.Text).Date;
                 Aluguel.Valor = double.Parse(txtValor.Text);
-                Aluguel.Vencimento = DateTime.Parse(dateVencimento.Text.ToString());
+                Aluguel.Vencimento = DateTime.Parse(dateVencimento.Text).Date;
+                /*
                 Aluguel.Agua = int.Parse(checkAgua.Text);
                 Aluguel.Eletricidade = int.Parse(checkEletricidade.Text);
                 Aluguel.Net = int.Parse(checkInternet.Text);
                 Aluguel.Garagem = int.Parse(checkGaragem.Text);
+                 */
 
                 if (txtCod.Text == "") //NOVO
                 {
@@ -74,7 +83,7 @@ namespace ProjectRent
                     Aluguel.AlterarBanco();
                     MessageBox.Show("Dados do inquilino alterados com sucesso.", "Alteração de dados", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                Close();
+                //Close();
             }
         }
 
