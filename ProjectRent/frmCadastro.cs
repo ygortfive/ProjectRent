@@ -7,8 +7,7 @@ namespace ProjectRent
     {
         public frmCadastro()
         {
-            InitializeComponent();
-            MessageBox.Show("OCORRENDO ERRO PARA VALIDAR E SALVAR CAMPO DE DATA");
+            InitializeComponent();            
         }
 
         private void frmCadastro_Load(object sender, EventArgs e)
