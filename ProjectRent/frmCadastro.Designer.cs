@@ -57,6 +57,7 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label25 = new System.Windows.Forms.Label();
             this.dateFim = new System.Windows.Forms.MaskedTextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
@@ -76,7 +77,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -408,6 +408,18 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Dados Contratuais";
             // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.BackColor = System.Drawing.Color.Transparent;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.ForeColor = System.Drawing.Color.Red;
+            this.label25.Location = new System.Drawing.Point(6, 47);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(13, 15);
+            this.label25.TabIndex = 42;
+            this.label25.Text = "*";
+            // 
             // dateFim
             // 
             this.dateFim.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -611,18 +623,6 @@
             this.label20.Size = new System.Drawing.Size(119, 12);
             this.label20.TabIndex = 25;
             this.label20.Text = "* Campos Obrigatórios";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.BackColor = System.Drawing.Color.Transparent;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.ForeColor = System.Drawing.Color.Red;
-            this.label25.Location = new System.Drawing.Point(6, 47);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(13, 15);
-            this.label25.TabIndex = 42;
-            this.label25.Text = "*";
             // 
             // frmCadastro
             // 

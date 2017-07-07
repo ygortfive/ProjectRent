@@ -140,10 +140,10 @@ namespace ProjectRent
             CommandGravar.Append("'" + _ref + "',");
             CommandGravar.Append("'" + _tipo + "',");
             CommandGravar.Append("'" + _num + "',");
-            CommandGravar.Append("'" + _dataInicio + "',");
-            CommandGravar.Append("'" + _dataFim + "',");
-            CommandGravar.Append("'" + _valor + "',");
-            CommandGravar.Append("'" + _vencimento + "',");
+            CommandGravar.Append("'" + _dataInicio.Date + "',");
+            CommandGravar.Append("'" + _dataFim.Date + "',");
+            CommandGravar.Append(    + _valor + ",");
+            CommandGravar.Append("'" + _vencimento.Date + "',");
             CommandGravar.Append("'" + _agua + "',");
             CommandGravar.Append("'" + _net + "',");
             CommandGravar.Append("'" + _eletricidade + "',");

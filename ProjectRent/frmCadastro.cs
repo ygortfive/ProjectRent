@@ -7,7 +7,8 @@ namespace ProjectRent
     {
         public frmCadastro()
         {
-            InitializeComponent();            
+            InitializeComponent();
+            MessageBox.Show("DATA COM FORMATO INCORRETO PARA INSERIR NO BANCO");
         }
 
         private void frmCadastro_Load(object sender, EventArgs e)
@@ -38,10 +39,11 @@ namespace ProjectRent
         private void button1_Click(object sender, EventArgs e)
         {
             //Validar campos em branco
+            //Retirando as máscaras dos campos para fazer validação
             dateVencimento.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             dateInicio.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             dateFim.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-            if((txtNome.Text == "") || (txtCPF.Text == "") || (txtCel.Text == "") || (cboxTipo.Text == "") || (double.Parse(txtValor.Text) == 0.0)
+            if((txtNome.Text == "") || (txtCPF.Text == "") || (txtCel.Text == "") || (cboxTipo.Text == "") || (!txtValor.MaskCompleted)
                 || (dateVencimento.Text == "") || (dateInicio.Text == "") || (dateFim.Text == ""))
             {
                 MessageBox.Show("Os campos com * são obrigatório" , "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -49,6 +51,7 @@ namespace ProjectRent
             }
             else
             {
+                //Retornando a mascara para ser compativel com o datetime
                 dateVencimento.TextMaskFormat = MaskFormat.IncludeLiterals;
                 dateInicio.TextMaskFormat = MaskFormat.IncludeLiterals;
                 dateFim.TextMaskFormat = MaskFormat.IncludeLiterals;
@@ -65,13 +68,39 @@ namespace ProjectRent
                 Aluguel.DataFim = DateTime.Parse(dateFim.Text).Date;
                 Aluguel.Valor = double.Parse(txtValor.Text);
                 Aluguel.Vencimento = DateTime.Parse(dateVencimento.Text).Date;
-                /*
-                Aluguel.Agua = int.Parse(checkAgua.Text);
-                Aluguel.Eletricidade = int.Parse(checkEletricidade.Text);
-                Aluguel.Net = int.Parse(checkInternet.Text);
-                Aluguel.Garagem = int.Parse(checkGaragem.Text);
-                 */
-
+                if (checkAgua.Checked)
+                {
+                    Aluguel.Agua = 1;
+                }
+                else
+                {
+                    Aluguel.Agua = 0;
+                }
+                if(checkEletricidade.Checked)
+                {
+                    Aluguel.Eletricidade = 1;
+                }
+                else
+                {
+                    Aluguel.Eletricidade = 0;
+                }
+                if (checkGaragem.Checked)
+                {
+                    Aluguel.Garagem = 1;
+                }
+                else
+                {
+                    Aluguel.Garagem = 0;
+                }
+                if (checkInternet.Checked)
+                {
+                    Aluguel.Net = 1;
+                }
+                else
+                {
+                    Aluguel.Net = 0;
+                }
+                
                 if (txtCod.Text == "") //NOVO
                 {
                     Aluguel.GravarBanco();
@@ -88,50 +117,22 @@ namespace ProjectRent
 
         private void checkAgua_CheckedChanged(object sender, EventArgs e)
         {
-            if (!checkAgua.Checked)
-            {
-                checkAgua.Text = "0";
-            }
-            else
-            {
-                checkAgua.Text = "1";
-            }
+            
         }
 
         private void checkEletricidade_CheckedChanged(object sender, EventArgs e)
         {
-            if (!checkEletricidade.Checked)
-            {
-                checkEletricidade.Text = "0";
-            }
-            else
-            {
-                checkEletricidade.Text = "1";
-            }
+           
         }
 
         private void checkInternet_CheckedChanged(object sender, EventArgs e)
         {
-            if(!checkInternet.Checked)
-            {
-                checkInternet.Text = "0";
-            }
-            else
-            {
-                checkInternet.Text = "1";
-            }
+            
         }
 
         private void checkGaragem_CheckedChanged(object sender, EventArgs e)
         {
-            if (!checkGaragem.Checked)
-            {
-                checkGaragem.Text = "0";
-            }
-            else
-            {
-                checkGaragem.Text = "1";
-            }
+            
         }
     }
 }
