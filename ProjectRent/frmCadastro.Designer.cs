@@ -41,11 +41,11 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtRG = new System.Windows.Forms.TextBox();
-            this.txtCPF = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtRef = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.mxtCPF = new System.Windows.Forms.MaskedTextBox();
             this.txtCel = new System.Windows.Forms.MaskedTextBox();
             this.txtTel = new System.Windows.Forms.MaskedTextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -58,13 +58,13 @@
             this.label18 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label25 = new System.Windows.Forms.Label();
-            this.dateFim = new System.Windows.Forms.MaskedTextBox();
+            this.mtxDateFim = new System.Windows.Forms.MaskedTextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.dateInicio = new System.Windows.Forms.MaskedTextBox();
+            this.mtxDateInicio = new System.Windows.Forms.MaskedTextBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.dateVencimento = new System.Windows.Forms.MaskedTextBox();
-            this.txtValor = new System.Windows.Forms.MaskedTextBox();
+            this.mtxDateVencimento = new System.Windows.Forms.MaskedTextBox();
+            this.MtxValor = new System.Windows.Forms.MaskedTextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.cboxTipo = new System.Windows.Forms.ComboBox();
@@ -148,7 +148,6 @@
             this.label7.Size = new System.Drawing.Size(64, 18);
             this.label7.TabIndex = 7;
             this.label7.Text = "E-MAIL:";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label8
             // 
@@ -159,7 +158,6 @@
             this.label8.Size = new System.Drawing.Size(40, 18);
             this.label8.TabIndex = 8;
             this.label8.Text = "CPF:";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label9
             // 
@@ -208,23 +206,13 @@
             this.txtRG.Size = new System.Drawing.Size(111, 23);
             this.txtRG.TabIndex = 2;
             // 
-            // txtCPF
-            // 
-            this.txtCPF.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCPF.Location = new System.Drawing.Point(508, 15);
-            this.txtCPF.Name = "txtCPF";
-            this.txtCPF.Size = new System.Drawing.Size(124, 23);
-            this.txtCPF.TabIndex = 3;
-            this.txtCPF.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
-            // 
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(454, 97);
+            this.txtEmail.Location = new System.Drawing.Point(442, 50);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(170, 23);
-            this.txtEmail.TabIndex = 6;
-            this.txtEmail.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            this.txtEmail.TabIndex = 7;
             // 
             // txtRef
             // 
@@ -232,7 +220,7 @@
             this.txtRef.Location = new System.Drawing.Point(108, 86);
             this.txtRef.Name = "txtRef";
             this.txtRef.Size = new System.Drawing.Size(279, 23);
-            this.txtRef.TabIndex = 7;
+            this.txtRef.TabIndex = 8;
             // 
             // label4
             // 
@@ -249,11 +237,12 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.mxtCPF);
             this.groupBox1.Controls.Add(this.txtCel);
             this.groupBox1.Controls.Add(this.txtTel);
             this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Controls.Add(this.txtEmail);
             this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.txtCPF);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtRef);
             this.groupBox1.Controls.Add(this.label8);
@@ -269,24 +258,34 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados Pessoais";
             // 
+            // mxtCPF
+            // 
+            this.mxtCPF.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mxtCPF.Location = new System.Drawing.Point(511, 16);
+            this.mxtCPF.Mask = "000,000,000-00";
+            this.mxtCPF.Name = "mxtCPF";
+            this.mxtCPF.Size = new System.Drawing.Size(111, 22);
+            this.mxtCPF.TabIndex = 4;
+            this.mxtCPF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // txtCel
             // 
             this.txtCel.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCel.Location = new System.Drawing.Point(87, 50);
-            this.txtCel.Mask = "(99) 00000-0000";
+            this.txtCel.Mask = "(99)00000-0000";
             this.txtCel.Name = "txtCel";
             this.txtCel.Size = new System.Drawing.Size(111, 23);
-            this.txtCel.TabIndex = 4;
+            this.txtCel.TabIndex = 5;
             // 
             // txtTel
             // 
             this.txtTel.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtTel.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTel.Location = new System.Drawing.Point(275, 50);
-            this.txtTel.Mask = "(99) 000-0000";
+            this.txtTel.Mask = "(99)000-0000";
             this.txtTel.Name = "txtTel";
             this.txtTel.Size = new System.Drawing.Size(97, 23);
-            this.txtTel.TabIndex = 5;
+            this.txtTel.TabIndex = 6;
             // 
             // label14
             // 
@@ -343,7 +342,7 @@
             this.txtNumLocal.Location = new System.Drawing.Point(202, 16);
             this.txtNumLocal.Name = "txtNumLocal";
             this.txtNumLocal.Size = new System.Drawing.Size(44, 23);
-            this.txtNumLocal.TabIndex = 9;
+            this.txtNumLocal.TabIndex = 10;
             // 
             // label16
             // 
@@ -383,13 +382,13 @@
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.label25);
-            this.groupBox2.Controls.Add(this.dateFim);
+            this.groupBox2.Controls.Add(this.mtxDateFim);
             this.groupBox2.Controls.Add(this.label24);
             this.groupBox2.Controls.Add(this.label23);
-            this.groupBox2.Controls.Add(this.dateInicio);
+            this.groupBox2.Controls.Add(this.mtxDateInicio);
             this.groupBox2.Controls.Add(this.label22);
-            this.groupBox2.Controls.Add(this.dateVencimento);
-            this.groupBox2.Controls.Add(this.txtValor);
+            this.groupBox2.Controls.Add(this.mtxDateVencimento);
+            this.groupBox2.Controls.Add(this.MtxValor);
             this.groupBox2.Controls.Add(this.label21);
             this.groupBox2.Controls.Add(this.label19);
             this.groupBox2.Controls.Add(this.cboxTipo);
@@ -420,15 +419,15 @@
             this.label25.TabIndex = 42;
             this.label25.Text = "*";
             // 
-            // dateFim
+            // mtxDateFim
             // 
-            this.dateFim.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateFim.Location = new System.Drawing.Point(323, 47);
-            this.dateFim.Mask = "00/00/0000";
-            this.dateFim.Name = "dateFim";
-            this.dateFim.Size = new System.Drawing.Size(78, 22);
-            this.dateFim.TabIndex = 11;
-            this.dateFim.ValidatingType = typeof(System.DateTime);
+            this.mtxDateFim.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtxDateFim.Location = new System.Drawing.Point(323, 47);
+            this.mtxDateFim.Mask = "00/00/0000";
+            this.mtxDateFim.Name = "mtxDateFim";
+            this.mtxDateFim.Size = new System.Drawing.Size(78, 22);
+            this.mtxDateFim.TabIndex = 12;
+            this.mtxDateFim.ValidatingType = typeof(System.DateTime);
             // 
             // label24
             // 
@@ -450,15 +449,15 @@
             this.label23.TabIndex = 40;
             this.label23.Text = "até";
             // 
-            // dateInicio
+            // mtxDateInicio
             // 
-            this.dateInicio.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateInicio.Location = new System.Drawing.Point(206, 47);
-            this.dateInicio.Mask = "00/00/0000";
-            this.dateInicio.Name = "dateInicio";
-            this.dateInicio.Size = new System.Drawing.Size(78, 22);
-            this.dateInicio.TabIndex = 10;
-            this.dateInicio.ValidatingType = typeof(System.DateTime);
+            this.mtxDateInicio.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtxDateInicio.Location = new System.Drawing.Point(206, 47);
+            this.mtxDateInicio.Mask = "00/00/0000";
+            this.mtxDateInicio.Name = "mtxDateInicio";
+            this.mtxDateInicio.Size = new System.Drawing.Size(78, 22);
+            this.mtxDateInicio.TabIndex = 11;
+            this.mtxDateInicio.ValidatingType = typeof(System.DateTime);
             // 
             // label22
             // 
@@ -470,24 +469,25 @@
             this.label22.TabIndex = 38;
             this.label22.Text = "Duração do contrato:";
             // 
-            // dateVencimento
+            // mtxDateVencimento
             // 
-            this.dateVencimento.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateVencimento.Location = new System.Drawing.Point(400, 76);
-            this.dateVencimento.Mask = "00/00/0000";
-            this.dateVencimento.Name = "dateVencimento";
-            this.dateVencimento.Size = new System.Drawing.Size(78, 22);
-            this.dateVencimento.TabIndex = 13;
-            this.dateVencimento.ValidatingType = typeof(System.DateTime);
+            this.mtxDateVencimento.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtxDateVencimento.Location = new System.Drawing.Point(400, 76);
+            this.mtxDateVencimento.Mask = "00/00/0000";
+            this.mtxDateVencimento.Name = "mtxDateVencimento";
+            this.mtxDateVencimento.Size = new System.Drawing.Size(78, 22);
+            this.mtxDateVencimento.TabIndex = 14;
+            this.mtxDateVencimento.ValidatingType = typeof(System.DateTime);
             // 
-            // txtValor
+            // MtxValor
             // 
-            this.txtValor.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtValor.Location = new System.Drawing.Point(176, 76);
-            this.txtValor.Mask = "000,00";
-            this.txtValor.Name = "txtValor";
-            this.txtValor.Size = new System.Drawing.Size(51, 23);
-            this.txtValor.TabIndex = 12;
+            this.MtxValor.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MtxValor.Location = new System.Drawing.Point(176, 76);
+            this.MtxValor.Mask = "000";
+            this.MtxValor.Name = "MtxValor";
+            this.MtxValor.Size = new System.Drawing.Size(51, 23);
+            this.MtxValor.TabIndex = 13;
+            this.MtxValor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label21
             // 
@@ -523,7 +523,7 @@
             this.cboxTipo.Name = "cboxTipo";
             this.cboxTipo.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.cboxTipo.Size = new System.Drawing.Size(104, 21);
-            this.cboxTipo.TabIndex = 8;
+            this.cboxTipo.TabIndex = 9;
             // 
             // groupBox3
             // 
@@ -547,7 +547,6 @@
             this.checkGaragem.TabIndex = 31;
             this.checkGaragem.Text = "Garagem";
             this.checkGaragem.UseVisualStyleBackColor = true;
-            this.checkGaragem.CheckedChanged += new System.EventHandler(this.checkGaragem_CheckedChanged);
             // 
             // checkAgua
             // 
@@ -558,7 +557,6 @@
             this.checkAgua.TabIndex = 28;
             this.checkAgua.Text = "Água";
             this.checkAgua.UseVisualStyleBackColor = true;
-            this.checkAgua.CheckedChanged += new System.EventHandler(this.checkAgua_CheckedChanged);
             // 
             // checkInternet
             // 
@@ -569,7 +567,6 @@
             this.checkInternet.TabIndex = 30;
             this.checkInternet.Text = "Internet";
             this.checkInternet.UseVisualStyleBackColor = true;
-            this.checkInternet.CheckedChanged += new System.EventHandler(this.checkInternet_CheckedChanged);
             // 
             // checkEletricidade
             // 
@@ -580,7 +577,6 @@
             this.checkEletricidade.TabIndex = 29;
             this.checkEletricidade.Text = "Eletricidade";
             this.checkEletricidade.UseVisualStyleBackColor = true;
-            this.checkEletricidade.CheckedChanged += new System.EventHandler(this.checkEletricidade_CheckedChanged);
             // 
             // btnNovo
             // 
@@ -612,6 +608,7 @@
             this.button2.TabIndex = 24;
             this.button2.Text = "&Sair";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label20
             // 
@@ -633,7 +630,6 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnNovo);
-            this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtRG);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.label9);
@@ -645,7 +641,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmCadastro";
             this.Text = "Cadastro";
-            this.Load += new System.EventHandler(this.frmCadastro_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -672,7 +667,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.TextBox txtRG;
-        private System.Windows.Forms.TextBox txtCPF;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtRef;
         private System.Windows.Forms.Label label4;
@@ -699,14 +693,15 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.MaskedTextBox txtValor;
+        private System.Windows.Forms.MaskedTextBox MtxValor;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.MaskedTextBox dateVencimento;
-        private System.Windows.Forms.MaskedTextBox dateFim;
+        private System.Windows.Forms.MaskedTextBox mtxDateVencimento;
+        private System.Windows.Forms.MaskedTextBox mtxDateFim;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.MaskedTextBox dateInicio;
+        private System.Windows.Forms.MaskedTextBox mtxDateInicio;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.MaskedTextBox mxtCPF;
     }
 }

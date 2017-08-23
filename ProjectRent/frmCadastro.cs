@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace ProjectRent
 {
@@ -7,67 +8,45 @@ namespace ProjectRent
     {
         public frmCadastro()
         {
-            InitializeComponent();
-            MessageBox.Show("DATA COM FORMATO INCORRETO PARA INSERIR NO BANCO");
+            InitializeComponent();            
         }
-
-        private void frmCadastro_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+               
         private void button1_Click(object sender, EventArgs e)
         {
+            //Teste para o migo ver o github :DDD
             //Validar campos em branco
             //Retirando as máscaras dos campos para fazer validação
-            dateVencimento.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-            dateInicio.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-            dateFim.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-            if((txtNome.Text == "") || (txtCPF.Text == "") || (txtCel.Text == "") || (cboxTipo.Text == "") || (!txtValor.MaskCompleted)
-                || (dateVencimento.Text == "") || (dateInicio.Text == "") || (dateFim.Text == ""))
+            mtxDateVencimento.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            mtxDateInicio.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            mtxDateFim.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            if((txtNome.Text == "") || (mxtCPF.Text == "") || (txtCel.Text == "") || (cboxTipo.Text == "") || (!MtxValor.MaskCompleted)
+                || (mtxDateVencimento.Text == "") || (mtxDateInicio.Text == "") || (mtxDateFim.Text == ""))
             {
                 MessageBox.Show("Os campos com * são obrigatório" , "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtNome.Focus();
             }
             else
-            {
+            {                
                 //Retornando a mascara para ser compativel com o datetime
-                dateVencimento.TextMaskFormat = MaskFormat.IncludeLiterals;
-                dateInicio.TextMaskFormat = MaskFormat.IncludeLiterals;
-                dateFim.TextMaskFormat = MaskFormat.IncludeLiterals;
+                mtxDateVencimento.TextMaskFormat = MaskFormat.IncludeLiterals;
+                mtxDateInicio.TextMaskFormat = MaskFormat.IncludeLiterals;
+                mtxDateFim.TextMaskFormat = MaskFormat.IncludeLiterals;
+                //txtValor.TextMaskFormat = MaskFormat.IncludePrompt;                
                 clsAluguel Aluguel = new clsAluguel();
                 //Aluguel.Cod = int.Parse((txtCod.Text));
                 Aluguel.Nome = txtNome.Text;
                 Aluguel.Rg = txtRG.Text;
-                Aluguel.Cpf = txtCPF.Text;
+                Aluguel.Cpf = mxtCPF.Text;
                 Aluguel.Cel = txtCel.Text;
+                Aluguel.Tel = txtTel.Text;
+                Aluguel.Ref = txtRef.Text;
                 Aluguel.Email = txtEmail.Text;
                 Aluguel.Tipo = cboxTipo.Text;
-                Aluguel.Num = txtNumLocal.Text;
-                Aluguel.DataInicio = DateTime.Parse(dateInicio.Text).Date;
-                Aluguel.DataFim = DateTime.Parse(dateFim.Text).Date;
-                Aluguel.Valor = double.Parse(txtValor.Text);
-                Aluguel.Vencimento = DateTime.Parse(dateVencimento.Text).Date;
+                Aluguel.Num = String.Format("{0:(###) #####-####}", txtNumLocal.Text);
+                Aluguel.DataInicio = DateTime.Parse(mtxDateInicio.Text).Date;
+                Aluguel.DataFim = DateTime.Parse(mtxDateFim.Text).Date;                
+                Aluguel.Valor = Convert.ToDouble(String.Format(CultureInfo.InvariantCulture, "{0:000.00}", MtxValor.Text));
+                Aluguel.Vencimento = DateTime.Parse(mtxDateVencimento.Text).Date;
                 if (checkAgua.Checked)
                 {
                     Aluguel.Agua = 1;
@@ -113,26 +92,13 @@ namespace ProjectRent
                 }
                 //Close();
             }
+        }       
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
-        private void checkAgua_CheckedChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void checkEletricidade_CheckedChanged(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void checkInternet_CheckedChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void checkGaragem_CheckedChanged(object sender, EventArgs e)
-        {
-            
-        }
+                
     }
 }

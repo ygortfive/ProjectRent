@@ -142,8 +142,8 @@ namespace ProjectRent
             CommandGravar.Append("'" + _num + "',");
             CommandGravar.Append("'" + _dataInicio.Date.ToString("yyyy-MM-dd") + "',");
             CommandGravar.Append("'" + _dataFim.Date.ToString("yyyy-MM-dd") + "',");
-            CommandGravar.Append(    + _valor + ",");
-            CommandGravar.Append("'" + _vencimento.Date.ToString("yyyy-MM-dd") + "',");
+            CommandGravar.Append(    _valor + ",");
+            CommandGravar.Append("'" + _vencimento.Date + "',");
             CommandGravar.Append("'" + _agua + "',");
             CommandGravar.Append("'" + _net + "',");
             CommandGravar.Append("'" + _eletricidade + "',");
@@ -172,10 +172,10 @@ namespace ProjectRent
             CommandGravar.Append("vr_ref = '" + _ref + "',");
             CommandGravar.Append("vr_tipo = '" + _tipo + "',");
             CommandGravar.Append("vr_num = '" + _num + "',");
-            CommandGravar.Append("vr_data_inicio = '" + _dataInicio + "',");
-            CommandGravar.Append("vr_data_fim = '" + _dataFim + "',");
+            CommandGravar.Append("vr_data_inicio = '" + _dataInicio.Date.ToString("yyyy-MM-dd") + "',");
+            CommandGravar.Append("vr_data_fim = '" + _dataFim.Date.ToString("yyyy-MM-dd") + "',");
             CommandGravar.Append("db_valor = '" + _valor + "',");
-            CommandGravar.Append("dt_vencimento = '" + _vencimento + "',");
+            CommandGravar.Append("dt_vencimento = '" + _vencimento.Date.ToString("yyyy-MM-dd") + "',");
             CommandGravar.Append("in_agua = '" + _agua + "',");
             CommandGravar.Append("in_net = '" + _net + "',");
             CommandGravar.Append("in_eletricidade = '" + _eletricidade + "',");
